@@ -42,9 +42,8 @@ public class Armour extends Equippable {
     public Armour()
     {
         super();
-        this.defense = 0;
-
         // Complete the remainder of this method
+        this.defense = 0;
     }
 
     /**
@@ -98,7 +97,13 @@ public class Armour extends Equippable {
         Armour cpy = new Armour();
 
         // Complete the remainder of this method
-
+        cpy.setName(super.getName());
+        cpy.setMaterial(super.getMaterial());
+        cpy.setDurability(super.getDurability());
+        cpy.setDefense(this.getDefense());
+        cpy.setModifier(super.getModifier());
+        cpy.setModifierLevel(super.getModifierLevel());
+        cpy.setElement(super.getElement());
 
         return cpy;
     }
@@ -119,7 +124,12 @@ public class Armour extends Equippable {
         Armour rhsItem = (Armour) rhs;
 
         // Complete the remainder of this method
-        return false;
+        return (super.getName().equals(rhsItem.getName())
+                && super.getMaterial().equals(rhsItem.getMaterial())
+                && super.getModifier().equals(rhsItem.getModifier())
+                && super.getModifierLevel() == rhsItem.getModifierLevel()
+                && super.getElement().equals(rhsItem.getElement())
+                && this.getDefense() == rhsItem.getDefense());
     }
 
     /**
@@ -147,7 +157,11 @@ public class Armour extends Equippable {
     @Override
     public String toString()
     {
-        return "Use FMT_STR, accessors and String.format...";
+        // "Use FMT_STR, accessors and String.format..."
+        return String.format(FMT_STR, super.getName(), super.getDurability(),
+                            this.getDefense(), super.getMaterial(),
+                            super.getModifier(), super.getModifierLevel(),
+                            super.getElement());
     }
 }
 
