@@ -125,11 +125,12 @@ public class Armour extends Equippable {
 
         // Complete the remainder of this method
         return (super.getName().equals(rhsItem.getName())
-                && super.getMaterial().equals(rhsItem.getMaterial())
-                && super.getModifier().equals(rhsItem.getModifier())
-                && super.getModifierLevel() == rhsItem.getModifierLevel()
-                && super.getElement().equals(rhsItem.getElement())
-                && this.getDefense() == rhsItem.getDefense());
+            && super.getMaterial().equals(rhsItem.getMaterial())
+            && super.getModifier().equals(rhsItem.getModifier())
+            && super.getModifierLevel() == rhsItem.getModifierLevel()
+            && super.getElement().equals(rhsItem.getElement())
+            && this.getDefense() == rhsItem.getDefense()
+        );
     }
 
     /**
